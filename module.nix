@@ -44,7 +44,6 @@ in
       serviceConfig = {
         Type = "simple";
         DynamicUser = true;
-        ReadWritePaths = if cfg.tmpFolder != null then cfg.tmpFolder else "";
         ExecStart = "${photomnemonic}/bin/photomnemonic";
       };
     };
