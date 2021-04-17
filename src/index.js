@@ -2,6 +2,7 @@
 
 /* eslint-disable no-negated-condition */
 
+const Boom = require('@hapi/boom')
 const Hapi = require('@hapi/hapi')
 const Joi = require('@hapi/joi')
 
@@ -17,7 +18,12 @@ const puppeteer = require('puppeteer')
 async function screenshot (url, fullscreen) {
   const browser = await puppeteer.launch({ args: ['--hide-scrollbars', '--window-size=1280x720'] })
   const page = await browser.newPage()
-  await page.goto(url)
+
+  try {
+    await page.goto(url)
+  } catch (error) {
+    throw Boom.notAcceptable('Problem trying to access page: ' + error.toString())
+  }
 
   await page.setViewport({
     mobile: false,
@@ -113,7 +119,7 @@ const init = async config => {
   server.method('screenshot', screenshot, {
     cache: {
       expiresIn: 60 * 60 * 1000,
-      generateTimeout: 10 * 1000
+      generateTimeout: 30 * 1000
     }
   })
 
