@@ -1,0 +1,51 @@
+{
+  "name": "photomnemonic-hapi",
+  "version": "0.0.1",
+  "description": "Mozilla Hubs photomnemonic service rewritten with just hapiJS for self-hosting",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -A",
+    "cov": "nyc mocha",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
+  },
+  "bin": {
+    "photomnemonic": "./src/bin.js"
+  },
+  "template": {
+    "extends": [
+      "nodeEslint"
+    ],
+    "node": {
+      "noNodeLock": true
+    }
+  },
+  "keywords": [
+    "photomnemonic",
+    "mozilla",
+    "hubs"
+  ],
+  "author": "Maciej Krüger <mkg20001@gmail.com>",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-ipfs": "*",
+    "eslint-config-oclif": "*",
+    "mocha": "*",
+    "nyc": "*"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/catbox-memory": "^5.0.1",
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "hapi-pino": "^8.3.0",
+    "hapi-sentry": "^3.2.0",
+    "mkg-bin-gen": "^0.1.4",
+    "mkgs-tool": "^0.1.15",
+    "pino": "^6.11.3",
+    "puppeteer": "^8.0.0",
+    "relish": "^3.0.0"
+  }
+}
