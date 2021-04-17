@@ -37,9 +37,9 @@ in
 
       description = "photomnemonic server";
 
-      environment.CONFIG = with builtins; toFile "config.json" toJSON ({
+      environment.CONFIG = with builtins; toFile "config.json" (toJSON ({
         hapi.port = cfg.port;
-      });
+      }));
 
       serviceConfig = {
         Type = "simple";
