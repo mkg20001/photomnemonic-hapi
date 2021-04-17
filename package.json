@@ -1,6 +1,6 @@
 {
   "name": "photomnemonic-hapi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mozilla Hubs photomnemonic service rewritten with just hapiJS for self-hosting",
   "main": "index.js",
   "scripts": {
