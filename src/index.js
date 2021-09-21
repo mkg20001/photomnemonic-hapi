@@ -4,12 +4,12 @@
 
 const Boom = require('@hapi/boom')
 const Hapi = require('@hapi/hapi')
-const Joi = require('@hapi/joi')
+const Joi = require('joi')
 
 /* const pino = require('pino')
 const log = pino({ name: 'photomnemonic' }) */
 
-const Relish = require('relish')({
+const Relish = require('relish2')({
   messages: {}
 })
 
